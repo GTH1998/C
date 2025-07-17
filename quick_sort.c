@@ -30,7 +30,12 @@ void swap(QS_DATA_T a[], QS_DATA_T i, QS_DATA_T j)
     swap(a, p, j);
     return j;
  }
-
+/******************************************************************************************************************
+ * @brief : quick sort function
+ * @param : a[] input array,and processd quick sort done out array
+ * @param : p input array start index// 0
+ * @param : r input array length - 1 //sizeof(a)/sizeof(a[0]) - 1
+ *****************************************************************************************************************/
  void quick_sort(QS_DATA_T a[], QS_DATA_T p,QS_DATA_T r)
  {
     if(p < r)
