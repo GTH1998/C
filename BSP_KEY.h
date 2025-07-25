@@ -2,10 +2,10 @@
 #define __BSP_KEY_H__
 
 
-#define LONG_PRESS_TIME 	250
+#define LONG_PRESS_TIME 	1500
 #define MIN_PRESS_TIME  	120
+#define SHAKE_WAIT_TIME     10          //key debounce tick
 
-#define SHAKE_WAIT_TIME 5
 #define SHORT_PRESS		1
 #define LONG_PRESS		2
 typedef enum
@@ -13,11 +13,13 @@ typedef enum
     EN_KEY_WAIT_STATUS,
     EN_KEY_PRESS_STATUS,
     EN_KEY_RELEASE_STATUS,
+    EN_KEY_DOUBLE_STATUS,
     EN_KEY_IDEL_STATUS,
 }en_bsp_key_status_t;
 
 enum
 {
+    EN_KEY_RELEASE,
     EN_KEY_SHORT_PRESS = 1,
     EN_KEY_LONG_PRESS
 };
@@ -58,6 +60,12 @@ typedef struct bsp_key_handle_link
     bsp_key_handle_t key_mode;
     struct bsp_key_handle_link* next; 
 }bsp_key_handle_link_t;
+
+typedef enum key_level
+{
+    KEY_LEVEL_LOW,
+    KEY_LEVEL_HIGH
+}key_level_t;
 
 
 #endif
